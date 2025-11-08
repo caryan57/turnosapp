@@ -1,0 +1,173 @@
+.page-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f5;
+  overflow: hidden;
+}
+/* ------------------------------
+   Card principal estilo macOS
+--------------------------------*/
+.counter-container {
+  width: 360px;
+  margin: 0 auto;
+  padding: 32px 28px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(22px) saturate(180%);
+  border-radius: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.09),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform .35s cubic-bezier(.25,.8,.25,1);
+}
+
+.counter-container:hover {
+  transform: translateY(-4px);
+}
+
+/* ------------------------------
+   Header
+--------------------------------*/
+.counter-header h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  font-size: 0.86rem;
+  color: #6d6d6d;
+  margin: 0 0 24px;
+}
+
+/* ------------------------------
+   Display del contador
+--------------------------------*/
+.counter-display {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  color: #007aff; /* Azul Apple */
+  text-align: center;
+  margin: 20px 0 30px;
+}
+
+/* ------------------------------
+   Botones estilo Apple moderno
+--------------------------------*/
+.button-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.ui-btn {
+  min-width: 110px;
+  padding: 11px 18px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all .22s ease;
+  user-select: none;
+  letter-spacing: -0.3px;
+}
+
+/* PRIMARY (blue – estilo iOS) */
+.ui-btn.primary {
+  background: #007aff;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0, 122, 255, 0.35);
+}
+
+.ui-btn.primary:hover {
+  background: #0066d6;
+}
+
+/* DANGER (rojo Apple) */
+.ui-btn.danger {
+  background: #ff3b30;
+  color: white;
+  box-shadow: 0 3px 10px rgba(255, 59, 48, 0.35);
+}
+
+.ui-btn.danger:hover {
+  background: #d9342a;
+}
+
+/* SUBTLE (gris suave + borde) */
+.ui-btn.subtle {
+  background: #f4f4f7;
+  color: #555;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ui-btn.subtle:hover {
+  background: #e8e8ec;
+}
+
+/* Contenedor editable */
+.editable-display {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper para número + icono */
+.display-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+/* Icono de editar */
+.edit-icon {
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #7d7d7d;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.edit-icon:hover {
+  color: #007aff;
+  transform: scale(1.15);
+}
+
+/* Input de edición estilo Apple */
+.edit-input {
+  font-size: 3.2rem;
+  font-weight: 700;
+  width: 180px;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  outline: none;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  color: #007aff;
+  animation: fadeIn .15s ease-out;
+}
+
+/* Mensaje de error */
+.error-message {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #ff3b30;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+

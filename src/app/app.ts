@@ -1,12 +1,18 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('bases');
+  protected readonly title = signal('Carlos Olivares');
+  protected readonly year = signal('');
+
+  constructor(){
+    const currentYear = new Date().getFullYear().toString();
+    this.year.set(currentYear);
+  }
 }

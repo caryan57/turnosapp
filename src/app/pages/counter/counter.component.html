@@ -1,0 +1,49 @@
+<div class="page-container">
+  <div class="counter-container">
+    <div class="counter-header">
+      <h2><i class="fa-solid fa-ticket"></i> Contador de Turnos</h2>
+      <p class="subtitle">Lleva de forma exacta el control de turnos</p>
+    </div>
+
+    <div class="counter-display editable-display">
+      <!-- MODO VISUAL -->
+       @if(!editing()) {
+         <div class="display-wrapper">
+           <span>{{ counter() }}</span>
+           <i class="fa-solid fa-pen-to-square edit-icon" (click)="startEdit()"></i>
+         </div>
+       }
+
+      <!-- MODO EDICIÓN -->
+       @if (editing()) {
+         <input
+           type="number"
+           class="edit-input"
+           [(ngModel)]="editValue"
+           (blur)="confirmEdit()"
+           (keydown.enter)="confirmEdit()"
+           max="99999"
+           autofocus
+         />
+       }
+    </div>
+
+    <div class="button-row">
+      <button class="ui-btn primary" (click)="increment()">+ 1</button>
+      <button class="ui-btn danger" (click)="decrement()">- 1</button>
+      <button class="ui-btn subtle" (click)="reset()">
+        <i class="fa-solid fa-eraser"></i> Resetear
+      </button>
+      <button class="ui-btn subtle" (click)="print()">
+        <i class="fa-solid fa-print"></i> Imprimir
+      </button>
+      <button class="ui-btn subtle" (click)="openDisplay()">
+        <i class="fa-solid fa-window-restore"></i> Mostrar en pantalla
+      </button>
+      <button class="ui-btn subtle" (click)="counterService.toggleMute()">
+        {{ counterService.mute() ? '🔇 Notificacion Silenciada' : '🔊 Notificacion Activa' }}
+      </button>
+      <span class="error-message">{{ errorMessage() }}</span>
+    </div>
+  </div>
+</div>
