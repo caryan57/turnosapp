@@ -1,4 +1,4 @@
-# 🎫 Turnero Web – Angular 20  
+# 🎫 TurnoApp – Angular 20  
 ### Control de turnos moderno, rápido y fácil de usar
 
 ![Angular](https://img.shields.io/badge/Angular-20-red?style=for-the-badge)
@@ -10,7 +10,7 @@
 ## 🌍 English Version Below
 
 ## 📌 Descripción  
-Turnero Web es una aplicación desarrollada en **Angular 20**, diseñada para manejar turnos de manera simple y eficiente.  
+Turno App es una aplicación desarrollada en **Angular 20**, diseñada para manejar turnos de manera simple y eficiente.  
 Incluye:
 
 ✅ Contador interactivo  
