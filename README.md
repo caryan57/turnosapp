@@ -7,9 +7,7 @@
 
 ---
 
-## 🌍 English Version Below
-
-## 📌 Descripción  
+## 📌 Descripción 
 Turno App es una aplicación desarrollada en **Angular 20**, diseñada para manejar turnos de manera simple y eficiente.  
 Incluye:
 
@@ -19,11 +17,25 @@ Incluye:
 ✅ Notificaciones sonoras  
 ✅ Interface inspirada en macOS / Apple design  
 ✅ Soporte para múltiples pantallas  
-✅ Código mantenible y escalable  
+✅ Código mantenible y escalable
+
+## 📌 Description 
+Modern, fast, and intuitive queue management system
+
+Turno App is a queue management application built with Angular 20, created for simplicity, speed, and clarity.
+Features:
+
+✅ Interactive counter
+✅ Display screen for clients
+✅ POS-style ticket printing
+✅ Audio notifications
+✅ macOS-inspired UI
+✅ Multi-screen support
+✅ Clean and scalable architecture
 
 ---
 
-## 🚀 Tecnologías  
+## 🚀 Tecnologías/Technologies  
 - **Angular 20**
 - **TypeScript**
 - **RxJS / Signals**
