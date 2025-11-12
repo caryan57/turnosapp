@@ -2,24 +2,43 @@ import { effect, Injectable, signal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class CounterService {
-  public counter = signal(0);
-  public mute = signal(false);
+  public counter = signal(this.loadCounterFromLocalStorage());
+  public mute = signal(this.loadMuteFromLocalStorage());
   private channel = new BroadcastChannel('counter-channel');
   protected currentCounterValue = localStorage.getItem('currentCounterValue');
   protected currentMuteValue = localStorage.getItem('mute');
 
   protected showCounterToDisplay = effect(() => {
     this.channel.postMessage(this.counter());
-    localStorage.setItem('currentCounterValue', this.counter().toString());
+    this.setCounterToLocalStorage(this.counter());
   });
 
   constructor() {
-    if (this.currentCounterValue) this.counter.set(Number(this.currentCounterValue));
-    if (this.currentMuteValue) this.mute.set(this.currentMuteValue === 'true');
-
     this.channel.onmessage = (ev) => {
       this.counter.set(ev.data);
     };
+  }
+
+  public loadCounterFromLocalStorage() {
+    const storedValue = localStorage.getItem('currentCounterValue');
+    if (storedValue) {
+      return Number(storedValue);
+    } else {
+      return 0;
+    }
+  }
+
+  public setCounterToLocalStorage(value: number) {
+    localStorage.setItem('currentCounterValue', value.toString());
+  }
+
+  public loadMuteFromLocalStorage() {
+    const storedValue = localStorage.getItem('mute');
+    if (storedValue) {
+      return storedValue === 'true';
+    } else {
+      return false;
+    }
   }
 
   public increment() {
